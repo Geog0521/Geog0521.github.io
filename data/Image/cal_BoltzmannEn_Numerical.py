@@ -16,8 +16,8 @@ This python script aims to calculate Boltzmann entropy of numerical and nominal 
 """
 Reference:
 Gao, P., Zhang, H., & Li, Z. (2017). A hierarchy-based solution to calculate the configurational entropy of landscape gradients. Landscape ecology, 32(6), 1133-1146.
-Gao, P., & Li, Z. (2019). Aggregation-based method for computing absolute Boltzmann entropy of landscape gradient with full thermodynamic consistency. Landscape Ecology, 34(8), 1837-1847.
-Gao, P., & Li, Z. (2019). Computation of the Boltzmann entropy of a landscape: A review and a generalization. Landscape Ecology, 34(9), 2183-2196.
+Gao, P., & Li, Z. (2019a). Aggregation-based method for computing absolute Boltzmann entropy of landscape gradient with full thermodynamic consistency. Landscape Ecology, 34(8), 1837-1847.
+Gao, P., & Li, Z. (2019b). Computation of the Boltzmann entropy of a landscape: A review and a generalization. Landscape Ecology, 34(9), 2183-2196.
 #regarding the problems of using this python script, please feel free to send an email to cxh9791156936@gmail.com
 """
 
@@ -25,7 +25,7 @@ Gao, P., & Li, Z. (2019). Computation of the Boltzmann entropy of a landscape: A
 @jit(nopython=True, parallel=True, fastmath=True)
 def One_to_four_nominal(pixel_data_window):
     """
-    this function is the key one part of calculating Boltzmann entropy of nominal raster data (see Gao and Li (2019)).
+    this function is the key one part of calculating Boltzmann entropy of nominal raster data (see Gao and Li (2019b)).
     :param pixel_data_window: pixels included by a 2*2 window. Date type is nominal, e.g., cropland, water,impervious surface.
     :return: Boltzmann entropy for categorical raster data
     """
@@ -161,7 +161,7 @@ def Iteration_Aggragation(banddata,mybase):
 
 def GetBoltzmann_Resampling(banddata,mybase=2,relative = False):
     """
-    calculating Boltzmann entropy based on a resampling-based method (see Gao and Li (2019))
+    calculating Boltzmann entropy based on a resampling-based method (see Gao and Li (2019a))
     :param banddata: a two-dimensional array
     :param mybase: the base for calculating Boltzmann entropy
     :param relative: when the relative is "False", you will get the absolute Boltzmann entropy value that captures the multiscale information.
