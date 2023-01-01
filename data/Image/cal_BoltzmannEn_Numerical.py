@@ -10,7 +10,7 @@ from numba import jit, njit
 import pandas as pd
 
 """
-This python script aims to calculate Boltzmann entropy of numerical data organized in raster data
+This python script aims to calculate Boltzmann entropy of numerical and nominal data organized in raster data
 """
 
 """
