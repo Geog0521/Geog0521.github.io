@@ -18,8 +18,15 @@ Reference:
 Gao, P., Zhang, H., & Li, Z. (2017). A hierarchy-based solution to calculate the configurational entropy of landscape gradients. Landscape ecology, 32(6), 1133-1146.
 Gao, P., & Li, Z. (2019). Aggregation-based method for computing absolute Boltzmann entropy of landscape gradient with full thermodynamic consistency. Landscape Ecology, 34(8), 1837-1847.
 Gao, P., & Li, Z. (2019). Computation of the Boltzmann entropy of a landscape: A review and a generalization. Landscape Ecology, 34(9), 2183-2196.
+"""
+
+"""
+Warming tips
+(i) for an W*H data (W: Width, D:Height), its relative Boltzmann entropy can be normalized by dividing it with W*D
+(ii) If W or D is not an even number, while you want to use the aggregation-based method; please use padding.
 #regarding the problems of using this python script, please feel free to send an email to cxh9791156936@gmail.com
 """
+
 
 # calculate Boltzmann entropy of nominal raster data
 @jit(nopython=True, parallel=True, fastmath=True)
